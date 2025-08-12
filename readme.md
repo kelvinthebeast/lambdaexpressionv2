@@ -1,3 +1,4 @@
+[![Java CI with Maven](https://github.com/kelvinthebeast/lambdaexpressionv2/actions/workflows/ci-junit.yml/badge.svg)](https://github.com/kelvinthebeast/lambdaexpressionv2/actions/workflows/ci-junit.yml)
 # WELCOME TO LAMBDA EXPRESSION REPOSITORY
 
 ### You will find in this repo the following stuff:
