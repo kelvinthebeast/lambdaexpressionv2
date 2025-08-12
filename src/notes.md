@@ -195,6 +195,30 @@ việc gom này diễn ra rất nhiều lần do code kéo dài thời gian cả
 - Notify được xanh đỏ tới team member khi có problem đỏ
 - Tư động cái việc ở trên không cần chạy bằng cơm -> ta cấu hình server và những thứ liên qua để tạo quy trình xanh đỏ 1 cách tự động --> rẽ nhánh đi làm: CI/CD/Devops ko code app, code cho quy trình xanh đỏ, deploy lên server khai triển các hành động để từ code -> chất lượng code -> ra được app -> rồi lên server luôn
 
+
+CI tools là phần mềm lắng nghe xem có ai cập nhật code không, nếu có nó sẽ kích hoạt chạy bộ unit test,
+ kiểm tra
+     xanh đỏ thì không vấn đề
+     Đỏ thì gửi mail chửi gã dev
+     Lặp lại quá trình này liên tục quá trình này -> continuos integration
+
+Ngày xưa github chỉ làm mỗi vai trò đẩy code lên làm server chứa code
+    phần CI để cho tools khác lo, jenkins, circle ci, team city, bamboo ci,....
+Ngày nay, github tích hợp luôn tool lắng nghe CI này vào trong github, gọi là github actions
+
+- tất cả các tools CI đều hoạt động dựa trên 1 nguyên tắc
+    - nó có 1 tập lệnh cấu hình sẵn, mình lựa chọn thao tác mình muốn dùng
+    - ví dụ: yêu cầu github báo cho tool biết ai là người sửa code
+            kích hoạt bộ lệnh gom code về server nào đó
+            gọi người kiến ant biên dịch code đã gom, sau đó chạy test, nếu ổn đóng gói .jar .war không ổn thì chửi
+        --> dùng lệnh không à
+            - lệnh qua ui, click các option
+            - gõ lệnh trong tập kịch bản, có đuôi mở rộng .yml .ymal (dza mồ)
+
+
+- CHƠI CI VỚI GITHUB ACTIONS
+    Tạo lệnh script -file.yml lưu kèm với project để sau đó ai sửa code, file này được chạy và XANH ĐỎ xuất hiện
+- Vấn đề là: Java project thì có nhiều cách bố trí (code khác nhau - thư mục chứa code khác nhau) nên .yml cũng phải viết khác nhau
 --------------------
 NET BEANS 8 mặc định khi tạo project, tạo unitTest, clean & build nó không chạy bộ unit test để kiểm tra xanh đỏ
  dù gọi trực tiếp clean & build trong nb hay gọi ở của sổ  cmd bằng lệnh ant
