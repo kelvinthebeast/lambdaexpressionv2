@@ -160,3 +160,37 @@ hoặc đưa url của kho cho bá tánh download (.zip)
     git commit -m "sửa cái gì?"
 
     git push
+
+# .md nghĩa là MARK DOWN là 1 ngôn ngữ đánh dấu, đơn giản và gọn nhẹ hơn HTML
+# dùng cho 1 số việc nhẹ nhàng, không dùng làm FE
+# vscode hay các tool IDE đều hiểu .md hiển thị màu sắc tag, dữ liệu
+    * dấu # tương đương h1
+    * dấu * tương đương với ul và li
+
+
+
+# Nhập môn CI - Continuos integration - tích hợp liên tục
+
+Là kỹ thuật đảm bảo chất lượng code của cả team không riêng của cá nhân
+Vì code của dự án là do sự đóng góp của nhiều team member, 1 dự án có nhiều dev cùng code
+
+
+mỗi dev phải dảm bảo code của mình ngon và phải đảm bảo code của mình cùng chung sống với dự án code phải ngon, cả dự án phải là màu Xanh thì mới ổn
+
+Code trên server phải xanh trên tất cả
+
+vậy CI là kỹ thuật gom code của ae lên server phải xanh cho tất cả khi gom (integration - tích hợp)
+
+
+việc gom này diễn ra rất nhiều lần do code kéo dài thời gian cả tháng, cả năm, n người cùng làm -> việc kiểm tra xanh cho tất cả làm liên tục liên tục
+- Tích hợp liên tục xuất hiện: tiến trình kiểm tra code của toàn dự án là màu xanh, diễn ra liên tục trên server được ai đó dev nào đó chỉnh sửa code
+
+- Nói cách khác: Mỗi lần ai đó đẩy code lên server, màu xanh cho tất cả chạy ngay, kích hoạt ngay tiến trình kiểm tra xanh khi code server bị thay đổi
+
+- Muốn làm CI cần:
+- Source code của ae (dự án mà)
+- Server chứa code để gom
+- Unit test cho toàn dự án để có xanh đỏ
+- Kích hoạt quy trình chạy unit test khi có bất kì gã dev nào sửa code trên server
+- Notify được xanh đỏ tới team member khi có problem đỏ
+- Tư động cái việc ở trên không cần chạy bằng cơm -> ta cấu hình server và những thứ liên qua để tạo quy trình xanh đỏ 1 cách tự động --> rẽ nhánh đi làm: CI/CD/Devops ko code app, code cho quy trình xanh đỏ, deploy lên server khai triển các hành động để từ code -> chất lượng code -> ra được app -> rồi lên server luôn
