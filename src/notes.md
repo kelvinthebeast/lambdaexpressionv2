@@ -194,3 +194,14 @@ việc gom này diễn ra rất nhiều lần do code kéo dài thời gian cả
 - Kích hoạt quy trình chạy unit test khi có bất kì gã dev nào sửa code trên server
 - Notify được xanh đỏ tới team member khi có problem đỏ
 - Tư động cái việc ở trên không cần chạy bằng cơm -> ta cấu hình server và những thứ liên qua để tạo quy trình xanh đỏ 1 cách tự động --> rẽ nhánh đi làm: CI/CD/Devops ko code app, code cho quy trình xanh đỏ, deploy lên server khai triển các hành động để từ code -> chất lượng code -> ra được app -> rồi lên server luôn
+
+--------------------
+NET BEANS 8 mặc định khi tạo project, tạo unitTest, clean & build nó không chạy bộ unit test để kiểm tra xanh đỏ
+ dù gọi trực tiếp clean & build trong nb hay gọi ở của sổ  cmd bằng lệnh ant
+ muốn netbeans 8.0 khi đóng gói app chạy bộ test trước khi đóng gói (.jar, .war)
+ ta phải độ lại tập tin build-impl.xml bằng cách gọi lệnh test trong tập .xml này mở file tìm dòng 1005 bổ sung vào thêm
+ <target depends="init,compile,-pre-pre-jar">
+ <target depends="init,compile,test,-pre-pre-jar">
+ nb 13 không cần làm, mặc định ant sẽ chạy test ở cmd
+    nhưng vẫn cần chỉnh sửa lại trong file này khi clean & build trong nb
+--------------------
