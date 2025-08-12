@@ -15,7 +15,7 @@ public class ReversedNumberTest {
                                     { 12, 21 },
                                     { 23, 32 },
                                     { -10 , -1 },
-                                    { 1, -1 }
+                                    { 1, 1 }
                                     
                                     
         };
