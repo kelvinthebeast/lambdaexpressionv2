@@ -145,3 +145,18 @@ pass sẽ đc hỏi khi đưa code lên, Windows tự remember, sau này ko cầ
     git remote add origin link.git báo với git tên ở local tên là gì, url ở đâu
 
     git push -u origin main chính thức đẩy lên server
+
+KHo local được đồng bộ lên kho từ xa - sau đó ta invite team member vào edit code ->
+team phải clone code về thành 1 folder trên local y chang máy leader
+
+hoặc đưa url của kho cho bá tánh download (.zip)
+
+# 4.3 Nhóm câu lệnh huyền thoại 
+# xài từ ngày này qua tháng khác do ta thay đổi code theo tiến trình làm dự án
+# Dù là sếp, lính, cũng chỉ 3 lệnh làm miết trên kho đã làm
+
+    git add *
+
+    git commit -m "sửa cái gì?"
+
+    git push
