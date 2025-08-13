@@ -7,12 +7,12 @@ import org.junit.Test;
 // input/ expected nhồi vào hàm test
 
 import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized; // DDT
 @RunWith(value = Parameterized.class)
 public class MathUtilDDTTestTest {
     // ta sẽ trả về mảng 2 chiều  gồm nhiều cặp Expected || Input
     @Parameterized.Parameters // junit sẽ ngầm chạy loop qua từng dòng để lây ra từng cặp data input và expected
-    // tên hàm không quan trong quan trọng là @
+    // tên hàm không quan trong quan trọng là @anotation
     public static Object[][] initData() {
         return new Integer[][] {
                                     { 0, 1 },
