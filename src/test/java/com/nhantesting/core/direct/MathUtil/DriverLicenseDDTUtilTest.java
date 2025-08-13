@@ -12,7 +12,8 @@ public class DriverLicenseDDTUtilTest {
                         { 17, false },
                         { 20, true },
                         { -5, IllegalArgumentException.class},
-                        { -10, IllegalArgumentException.class}
+                        { -10, IllegalArgumentException.class},
+                        { "nhan", "Testing example"}
         };
     }
     @Parameterized.Parameter(value = 0)
@@ -43,6 +44,8 @@ public class DriverLicenseDDTUtilTest {
             Assert.assertThrows((Class<? extends Throwable>) expected, () -> {
                 DriverLicenseUtil.isEligible2(age);
             });
+        } else {
+            System.out.println("Testing example");
         }
     }
 
