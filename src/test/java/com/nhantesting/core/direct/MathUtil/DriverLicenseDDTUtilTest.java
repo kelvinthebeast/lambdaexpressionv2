@@ -13,7 +13,6 @@ public class DriverLicenseDDTUtilTest {
                         { 20, true },
                         { -5, IllegalArgumentException.class},
                         { -10, IllegalArgumentException.class},
-                    
         };
     }
     @Parameterized.Parameter(value = 0)
